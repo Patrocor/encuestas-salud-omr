@@ -1,0 +1,21 @@
+name: Setup Python with uv
+description: Install uv, create a virtual environment for the requested Python version, and install project dependencies
+inputs:
+  python-version:
+    description: Python version to install
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+
+    - name: Create virtual environment
+      shell: bash
+      run: uv venv --python ${{ inputs.python-version }} .venv
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        uv pip install --python .venv/bin/python \
+          -r requirements.txt -r requirements.web.txt -r requirements.dev.txt
