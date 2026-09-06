@@ -2,15 +2,13 @@ name: Test
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - "src/**/*.py"
+      - "app/**/*.py"
       - "tests/**/*.py"
   pull_request:
-    branches: [master]
-    # paths:
-    #   - "src/**/*.py"
-    #   - "tests/**/*.py"
+    branches: [main]
 
 jobs:
   test-and-coverage:
