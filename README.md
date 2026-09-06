@@ -46,8 +46,8 @@ git --version
 ### 2. Descargar el Sistema de Encuesta de Salud
 
 ```powershell
-git clone https://github.com/jceronch1/encuesta-salud.git
-Set-Location encuesta-salud
+git clone https://github.com/Patrocor/encuestas-salud-omr.git
+Set-Location encuestas-salud-omr
 ```
 
 ### 3. Crear el entorno de Python
